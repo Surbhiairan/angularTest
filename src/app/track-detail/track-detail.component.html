@@ -1,0 +1,40 @@
+<div class="col-md-12">
+    <div class="col-md-12">
+        <!-- 
+             this.trackName = (obj && obj.trackName ) ? obj.trackName : "";
+        this.artistName = (obj && obj.artistName ) ? obj.artistName : "";
+        this.genre = (obj && obj.primaryGenreName ) ? obj.primaryGenreName : "";
+        this.duration = (obj && obj.trackTimeMillis ) ? obj.trackTimeMillis : "";
+        this.price = (obj && obj.trackPrice ) ? obj.trackPrice : "";
+        this.image = (obj && obj.artworkUrl30 ) ? obj.artworkUrl30 : "";
+        this.previewUrl = (obj && obj.previewUrl ) ? obj.previewUrl : "";
+        -->
+        <div class="jumbotron">
+                <h1 class="display-4"> {{selectedTrack.trackName}}</h1>
+                <hr class="my-4">
+                <p> Below is the track information .</p>
+                <p>
+                        <label> Artist Name  </label> <b>  {{selectedTrack.trackName}} </b>
+                </p>
+                <p>
+                        <label> Genre  </label> <b>  {{selectedTrack.genre}} </b>
+                </p>
+                <p>
+                        <label> Artist Name  </label> <b>  {{selectedTrack.artistName}} </b>
+                </p>
+                <p>
+                        <label> Duration  </label> <b>  {{selectedTrack.duration}} </b>
+                </p>
+                <p>
+                        <label> Price  </label> <b>  {{selectedTrack.price | currency}} </b>
+                </p>
+              </div>
+        
+    </div>
+    <div class="col-md-12 centerPlayer">
+        <audio controls preload="none" style="width:480px;">
+            <source [src]="selectedTrack.previewUrl" type="audio/mp4" />
+            <p>Your browser does not support HTML5 audio.</p>
+        </audio>
+    </div>
+</div>

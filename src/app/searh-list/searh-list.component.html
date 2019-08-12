@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <input type="text" name="search" [(ngModel)]="searchKey" class="col-md-10">
+        <button type="button" class="btn btn-primary" class="col-md-2" (click)="searchArtist()">search</button>
+    </div>
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>TrackName</th>
+                    <th>ArtistName</th>
+                    <th>Genre</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Action</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let track of tracks">
+                    <td> {{track.trackName}}</td>
+                    <td> {{track.artistName}}</td>
+                    <td> {{track.genre}}</td>
+                    <td> {{track.duration}}</td>
+                    <td> {{track.price}}</td>
+                    <td>
+                        <img [src]="track.image" alt="N/A"/> 
+                    </td>
+                    <td>
+                            <button type="button" class="btn btn-info" (click)="viewTrack(track)">view</button>
+ 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
